@@ -3,10 +3,11 @@ using UnityEngine;
 public class movedog : MonoBehaviour
 {
     public float speed = 10f;
-
+    public float jumpforce = 2f;
 
     //SpriteRenderer dg;
     Transform dg;
+    Rigidbody rbdg;
 
 
     void Start()
@@ -18,7 +19,7 @@ public class movedog : MonoBehaviour
     void Update()
     {
         transform.Translate(speed * Time.deltaTime, 0f, 0f, Space.World);
-        if (!wood_throw.lose) {
+        if (wood_throw.lose) {
             if (transform.position.x < -6.62f)
             {
                 speed = -speed;
@@ -33,7 +34,8 @@ public class movedog : MonoBehaviour
         }
         else {
 
-            speed = 0;
+            speed = -speed / 2;
+            //rbdg.AddForce(new Vector3(jumpforce, jumpforce, 0), ForceMode.Impulse);
 
         }
     } 
