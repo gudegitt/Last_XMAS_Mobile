@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Poleno
   - dog
+  - Flame
   layers:
   - Default
   - TransparentFX
