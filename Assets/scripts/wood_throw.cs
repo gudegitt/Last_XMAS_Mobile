@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class wood_throw : MonoBehaviour
 {
-    public static bool lose = false;
+    public static bool lose_dog = false;
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("INININ");
+        //Debug.Log("INININ");
         if (other.gameObject.tag == "dog")
-            lose = true;
+            lose_dog = true;
+        Destroy(gameObject, 1);
     }
 }
