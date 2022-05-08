@@ -18,7 +18,7 @@ public class movedog : MonoBehaviour
     void Update()
     {
         transform.Translate(speed * Time.deltaTime, 0f, 0f, Space.World);
-        if (!wood_throw.lose) {
+        {
             if (transform.position.x < -6.62f)
             {
                 speed = -speed;
@@ -31,10 +31,6 @@ public class movedog : MonoBehaviour
                 dg.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + 180, transform.rotation.eulerAngles.z);
             }
         }
-        else {
 
-            speed = 0;
-
-        }
-    } 
+    }
 }
